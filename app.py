@@ -105,4 +105,4 @@ def predict():
     return render_template('index.html', text=extracted_text, prediction=prediction_label, processed_text=extracted_text if audio_file else "")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080)
