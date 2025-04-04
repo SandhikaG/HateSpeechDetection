@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HateShield - Detect Hate Speech</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e3f2fd;
+            color: #0d47a1;
+            box-sizing: border-box;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #1565c0;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .logo {
+            width: 200px;
+        }
+        .split-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .split-box {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            min-width: 300px;
+            min-height: 400px
+        }
+        .split-box h2 {
+            color: #1565c0;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #64b5f6;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+    background: #1565c0;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    width: auto; /* Fit content */
+    padding: 10px 20px; /* Better spacing */
+    min-width: 120px; /* Ensure proper size */
+    display: block; /* Aligns the button as a block element */
+    margin: 10px auto; /* Centers the button horizontally */
+    text-align: center; /* Ensures text inside is centered */
+}
+
+        button:hover {
+            background: #0d47a1;
+        }
+        .dashboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #bbdefb, #64b5f6);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .sdg-box {
+            max-width: 1200px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .sdg-box img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: #0d47a1;
+        }
+        .contact {
+            text-align: center;
+            padding: 40px;
+            background: #1565c0;
+            color: white;
+        }
+        .contact a {
+            color: #bbdefb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="header">
+        <div class="logo-container">
+            <center><img src="static/HateShield.jpg" alt="HateShield Logo" class="logo"></center>
+            
+        </div>
+    </div>
+
+    <div class="split-container">
+        <div class="split-box info-box">
+            <h2 style="text-align: center;">About HateShield</h2>
+<p style="text-align: justify;">
+    HateShield leverages advanced Machine Learning and Natural Language Processing (NLP) to identify and prevent hate speech.  
+    It analyzes both text and audio, promoting safer and more respectful online communication.  
+</p>
+<p style="text-align: justify;">
+    Our system is trained on a diverse dataset containing labeled examples of hate speech, offensive speech, and neutral speech,  
+    ensuring accurate classification. By incorporating supervised learning techniques and deep learning models, HateShield can  
+    detect harmful content in real-time.  
+</p>
+<p style="text-align: justify;">
+    Additionally, the platform aims to contribute to digital safety by helping social media platforms, organizations, and individuals  
+    mitigate online toxicity. With the integration of speech-to-text technology, HateShield extends its detection capabilities beyond  
+    text inputs, making it effective for multimedia content as well.  
+</p>
+        </div>
+        <div class="split-box detection-box">
+            <h2>Detect Hate Speech</h2>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <input type="text" name="input_text" id="input_text" placeholder="Enter text" value="{{ text }}"><br>
+                <label for="audio_file">Upload audio (.mp3, .wav)</label>
+                <input type="file" name="audio_file" id="audio_file" accept=".mp3,.wav">
+                <button type="submit">Analyze</button>
+            </form>
+        
+            <div id="loading" class="loading">Analyzing, please wait...</div>
+        
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+        
+            {% if prediction %}
+                <h3>Prediction: {{ prediction }}</h3>
+            {% endif %}
+        
+            {% if processed_text %}
+                <h4>Processed Text: "{{ processed_text }}"</h4>
+            {% endif %}
+        </div>
+        
+    </div>
+
+    
+
+    <div class="dashboard">
+        <div class="sdg-box">
+            <img src="/static/sdg16.png" alt="SDG 16">
+            <p><strong>HateShield & SDG 16:</strong> Advancing peace, justice, and strong institutions by detecting and preventing hate speech to foster safer digital spaces.</p>
+        </div>
+    </div>
+
+   
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

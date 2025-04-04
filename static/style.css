@@ -1,0 +1,329 @@
+body {
+  background-color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Top Navigation Bar */
+.navbar {
+  background-color: #002061;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar .right-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar .right-menu li {
+  margin: 0 15px;
+}
+
+.navbar .right-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.navbar .right-menu li a:hover {
+  text-decoration: underline;
+}
+
+.second-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+}
+
+.site-title {
+  font-size: 18px;
+  color: rgb(1, 1, 1);
+}
+
+.second-row ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.second-row ul li {
+  margin: 0 15px;
+}
+
+.second-row ul li a {
+  text-decoration: none;
+  color: rgb(1, 1, 1);
+  font-size: 18px;
+}
+
+.second-row ul li a:hover {
+  text-decoration: underline;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.company-logo {
+  width: 225px;
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Full-Width Carousel Styles */
+.carousel-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.dashboard-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.dashboard {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.sdg-box {
+  width: 225px;
+  height: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sdg-box:hover {
+  transform: scale(1.1);
+}
+
+.sdg-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.split-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  gap: 20px;
+}
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.logo-container img {
+  height: 80px;
+  width: auto;
+}
+
+ul {
+  position: absolute;
+  right: 20px;
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Split Container */
+.split-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensure proper vertical alignment */
+  margin: 0 auto;
+  width: 80%;
+  gap: 20px; /* Reduce unnecessary space */
+}
+/* Style for Each Box */
+.split-box {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.detection-box, .info-box {
+  background-color: #f8f9fa; /* Light gray background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.detection-box input[type="file"] {
+  margin: 10px 0;
+}
+.detection-box:hover {
+  transform: scale(1.05);
+}
+
+/* Increase Text Box Length */
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+input[type="submit"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Improve Submit Button */
+.submit-btn {
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #003c82;
+}
+
+
+.detection-box button {
+  background-color: #0056b3; /* Matching theme color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.detection-box button:hover {
+  background-color: #003d82;
+}
+.info-box {
+  width: 35%; /* Decrease width */
+  height: 350px; /* Keep the height reasonable */
+}
+.info-box:hover {
+  transform: scale(1.05);
+}
+
+/* Style for "Hate Speech Detection" container */
+.detection-box {
+  width: 60%; /* Increase width */
+  height: 370px; /* Increase height */
+}
+.detection-box input[type="text"], 
+.detection-box input[type="file"]
+ {
+    width: 90%;
+    margin: 10px 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+   /* Adjust as needed */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Pushes it to center */
+}
+
+.logo {
+  width:auto ;/* Adjust size */
+  height: 200px;
+  display: block;
+}
+
+
+
+.about-link {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.about-link:hover {
+  color: #0056b3;
+}
