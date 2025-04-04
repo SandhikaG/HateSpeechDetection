@@ -1,0 +1,10 @@
+Flask
+numpy
+tensorflow
+speechrecognition
+librosa
+pydub
+nltk
+scikit-learn
+pandas
+pickle5
